@@ -1,7 +1,6 @@
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils.translation import gettext as _
-from django.core.validators import MinValueValidator, MaxValueValidator
-
 
 LOWEST_RELEASE_YEAR = 1800
 HIGHEST_RELEASE_YEAR = 2999
