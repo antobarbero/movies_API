@@ -34,14 +34,28 @@ class Person(models.Model):
         blank=True
     )
 
+    class Meta:
+        verbose_name = 'Person'
+        verbose_name_plural = 'People'
+
+    def __str__(self):
+        return '{} - {} {}'.format(self.pk, self.first_name, self.last_name)
+
 
 class Movie(models.Model):
     """Represents an instance of a movie."""
     title = models.CharField(_('title'), max_length=100)
     release_year = models.PositiveIntegerField(
-        _('release_year'),
+        _('release year'),
         validators=[
             MinValueValidator(LOWEST_RELEASE_YEAR),
             MaxValueValidator(HIGHEST_RELEASE_YEAR)
         ]
     )
+
+    class Meta:
+        verbose_name = 'Movie'
+        verbose_name_plural = 'Movies'
+
+    def __str__(self):
+        return '{} - {}'.format(self.pk, self.title)
