@@ -1,0 +1,43 @@
+#!/bin/sh
+# script to control coding style for git staged files.
+
+pass=true
+RED='\033[1;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+python_files=$(git diff --cached --name-only --diff-filter=ACM HEAD | grep ".py$")
+staged_files=${python_files}
+
+if [ -n "$staged_files" ]; then
+
+    printf "\n######################################################################\n\n";
+    printf "Running isort control\n\n";
+    isort -c ${python_files}
+    if [ $? != 0 ]; then
+        echo "${RED}FAILED.${NC}"
+        pass=false
+    else
+        echo "${GREEN}OK.${NC}"
+    fi
+
+    printf "\n######################################################################\n\n";
+    printf "Running flake8 control\n\n";
+    flake8 ${python_files}
+    if [ $? != 0 ]; then
+        echo "${RED}FAILED.${NC}"
+        pass=false
+    else
+        echo "${GREEN}OK.${NC}"
+    fi
+
+    # If there are failures cancel commit
+    if ! $pass; then
+        exit 1
+    fi
+
+else
+    echo "There are no python staged files"
+fi
+
+exit 0
