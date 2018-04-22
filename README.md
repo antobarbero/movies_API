@@ -1,6 +1,6 @@
 # Movies API
 
-## Clonation of repository
+### Clonation of repository ###
 $ git clone https://github.com/antobarbero/movies_API.git
 
 ________________________________________________________________________
@@ -17,7 +17,7 @@ $ sh setup_project.sh
 
 
 
-Or manually follow these steps:
+#### Or manually follow these steps: ####
 
 
 1. install python and virtualenv
@@ -55,7 +55,7 @@ $ python movie_API/manage.py --dev migrate
 
 ________________________________________________________________________
 
-## Run the server
+### Run the server ###
 
 ```
 $ ./movies_API/manage.py runserver
@@ -69,7 +69,7 @@ $ ./movies_API/manage.py createsuperuser
 ________________________________________________________________________
 
 
-## How to run tests
+### How to run tests ###
 ```
 $ ./movies_API/manage.py tests
 ```
