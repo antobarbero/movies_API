@@ -29,7 +29,6 @@ $ sudo apt-get install python3.6 -y
 
 $ sudo apt-get install python3-venv -y
 
-$ pip3 install virtualenv
 ```
 
 2.  create a virtual enviroment and activate it.
