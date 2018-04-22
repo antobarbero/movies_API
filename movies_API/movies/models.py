@@ -37,6 +37,7 @@ class Person(models.Model):
     class Meta:
         verbose_name = 'Person'
         verbose_name_plural = 'People'
+        ordering = 'id',
 
     def __str__(self):
         return '{} - {} {}'.format(self.pk, self.first_name, self.last_name)
@@ -56,6 +57,7 @@ class Movie(models.Model):
     class Meta:
         verbose_name = 'Movie'
         verbose_name_plural = 'Movies'
+        ordering = 'id',
 
     def __str__(self):
         return '{} - {}'.format(self.pk, self.title)
