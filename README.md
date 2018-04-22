@@ -1,4 +1,4 @@
-# Movies API
+# Movies API #
 
 ### Clonation of repository ###
 $ git clone https://github.com/antobarbero/movies_API.git
@@ -61,7 +61,7 @@ ________________________________________________________________________
 $ ./movies_API/manage.py runserver
 ```
 
-## Create a super user
+### Create a super user ###
 
 ```
 $ ./movies_API/manage.py createsuperuser
