@@ -70,5 +70,5 @@ ________________________________________________________________________
 
 ### How to run tests ###
 ```
-$ ./movies_API/manage.py tests
+$ ./movies_API/manage.py test movies_API
 ```
