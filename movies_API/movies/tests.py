@@ -223,6 +223,7 @@ class MovieDetailAPITestCase(APITestCase):
         self.assertIn('casting', data)
         self.assertIn('directors', data)
         self.assertIn('producers', data)
+        self.assertIn('roman_release_year', data)
 
     def test_update_movie(self):
         """
