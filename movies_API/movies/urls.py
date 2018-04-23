@@ -1,67 +1,17 @@
 from django.conf.urls import include, url
+from rest_framework.routers import DefaultRouter
 
-from .views import (MovieCreateAPIView, MovieRetrieveAPIView,
-                    MoviesListAPIView, MovieUpdateAPIView, PeopleListAPIView,
-                    PersonCreateAPIView, PersonRetrieveAPIView,
-                    PersonUpdateAPIView)
+from .views import MovieViewSet, PersonViewSet
 
-app_name = 'movies'
+router = DefaultRouter(trailing_slash=False)
+router.register(r'people', PersonViewSet, base_name='person')
+router.register(r'movies', MovieViewSet, base_name='movie')
 
+app_name = 'movies_api'
 
 urlpatterns = [
-    # people
-    url(r'^people/', include([
-        url(
-            r'^$',
-            PeopleListAPIView.as_view(),
-            name='people-list'
-        ),
-        url(
-            r'^create/$',
-            PersonCreateAPIView.as_view(),
-            name='person-create'
-        ),
-        url(
-            r'^(?P<pk>\d+)/', include([
-                url(
-                    r'^$',
-                    PersonRetrieveAPIView.as_view(),
-                    name='person-detail'
-                ),
-                url(
-                    r'^update/$',
-                    PersonUpdateAPIView.as_view(),
-                    name='person-update'
-                ),
-            ])
-        ),
-    ])),
-
-    # movies
-    url(r'^movies/', include([
-        url(
-            r'^$',
-            MoviesListAPIView.as_view(),
-            name='movies-list'
-        ),
-        url(
-            r'^create/$',
-            MovieCreateAPIView.as_view(),
-            name='movie-create'
-        ),
-        url(
-            r'^(?P<pk>\d+)/', include([
-                url(
-                    r'^$',
-                    MovieRetrieveAPIView.as_view(),
-                    name='movie-detail'
-                ),
-                url(
-                    r'^update/$',
-                    MovieUpdateAPIView.as_view(),
-                    name='movie-update'
-                ),
-            ])
-        ),
-    ])),
+    url(
+        r'^api/',
+        include(router.urls),
+    )
 ]
