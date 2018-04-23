@@ -14,4 +14,4 @@ python3 -m venv .env
 pip install -r requirements.txt
 
 # running migrations
-python movie_API/manage.py --dev migrate
+./movies_API/manage.py migrate

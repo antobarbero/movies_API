@@ -49,7 +49,7 @@ $ pip install -r requirements.txt
 4. Run the database migrations
 
 ```
-$ python movie_API/manage.py --dev migrate
+$ ./movies_API/manage.py migrate
 ```
 
 ________________________________________________________________________
