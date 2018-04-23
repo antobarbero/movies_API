@@ -13,14 +13,14 @@ Just run the following command for setup (Tested on Ubuntu 17.10)
 ```
 $ sh setup_project.sh
 ```
-* It will create a virtual enviroment, install the requirements and run the migrations.
+* It will create a virtual environment, install the requirements and run the migrations.
 
 
 
 #### Or manually follow these steps: ####
 
 
-1. install python and virtualenv
+1. install python and python venv
 
 ```
 $ sudo apt-get update
@@ -31,7 +31,7 @@ $ sudo apt-get install python3-venv -y
 
 ```
 
-2.  create a virtual enviroment and activate it.
+2.  create a virtual environment and activate it.
 
 ```
 $ python3 -m venv .env
@@ -40,7 +40,7 @@ $ . .env/bin/activate
 ```
 
 
-3. install the project requirements (with the virtual enviroment activated)
+3. install the project requirements (with the virtual environment activated)
 
 ```
 $ pip install -r requirements.txt
@@ -52,6 +52,13 @@ $ pip install -r requirements.txt
 $ ./movies_API/manage.py migrate
 ```
 
+________________________________________________________________________
+
+### Activate python virtual environment ###
+
+```
+$ . .env/bin/activate
+```
 ________________________________________________________________________
 
 ### Run the server ###
