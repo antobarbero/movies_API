@@ -1,5 +1,8 @@
 # Movies API #
 
+RESTful API to create, retrieve, update and delete movies records.
+
+
 ### Clonation of repository ###
 $ git clone https://github.com/antobarbero/movies_API.git
 
